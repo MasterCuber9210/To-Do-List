@@ -8,7 +8,7 @@ export class Todo {
         this.tarea = tarea;
 
         this.id         = new Date().getTime(); //Genera un numero para la hora exacta y se puede usar como id
-        this.compleatdo = false;
+        this.completado = false;
         this.creado     = new Date();
         
     }

@@ -1,15 +1,19 @@
 import './styles.css';
 import { Todo,TodoList } from './classes';
+import { crearTodoHtml } from './js/componentes';
+
 
 
 
 
 const tarea = new Todo('Aprender JavaScript');
-const tarea2 = new Todo('Comprar un unicornio');
 
-const todoList = new TodoList(tarea);
+const todoList = new TodoList();
+
+// const crearHtml = new crearTodoHtml(tarea);
 
 todoList.nuevoTodo(tarea);
-todoList.nuevoTodo(tarea2);
+crearTodoHtml(tarea);
+
 console.log(todoList);
 
