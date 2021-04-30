@@ -1,5 +1,5 @@
 
-// To-do class 
+// clase encargada de crear nuevas instancias de tareas
 export class Todo {
 
 
