@@ -55,6 +55,7 @@
 * event.target.parentElement => permite ver el elemento padre del target
 * event.target.parentElement.getAttribute('attribute) => permite obtner el atributo seleccionado
 * elemento.classList.toggle('clase') => se encarga de cambiar el estado de una clase, la pone o la quita
+* elemento.removeChild('child element') => nos permite eliminar un elemento hijo del html
 
 
 //------------NPM------------------

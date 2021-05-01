@@ -50,8 +50,15 @@ divTodoList.addEventListener('click', (event)=> {
     const todoId         = todoElemento.getAttribute('data-id') ;// gets the daata-id info
 
     if (nombreElemento.includes('input')) {
+
         todoList.marcarCompletado(todoId);
         todoElemento.classList.toggle('completed'); //toggles the class. adding it and removing
+
+    } else if (nombreElemento.includes('button')) {
+
+        todoList.eliminarTodo(todoId); //eliminates the todo from the array
+        divTodoList.removeChild(todoElemento); // removes the html element asociated
+
     }
     
     // console.log(event.target.localName);
