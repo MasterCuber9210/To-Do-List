@@ -192,6 +192,10 @@ body {
     appearance: none;
 }
 
+.todo-list li .toggle:hover {
+    cursor: pointer;
+}
+
 .todo-list li .toggle {
     opacity: 0;
 }
@@ -246,6 +250,7 @@ body {
 
 .todo-list li .destroy:after {
     content: '×';
+    cursor: pointer;
 }
 
 .todo-list li:hover .destroy {

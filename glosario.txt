@@ -1,0 +1,80 @@
+//--------Glosario de utilidades-------------
+
+* % => reminder operator // it provides de reminder of the division of 2 numbers. syntaxis: 5 % 2 = 1 and 4 % 2 = 0
+* += => compound asignment // it combines the ++ and a addition. so a = a + 5; => a+=;
+* \" something\" => escaping quotes // it lets use quotes inside a string without trigerring a finish string.
+* .length => it provides the size or length
+* .forEach => it performs a index rotaion and let us take actions
+* .push => agrega un elemento al final del array y retorna el nuevo length
+* .unshift => agrega un elemento al inicio del array y retorna el nuevo length
+* .pop => Borra el ultimo elemeno de un array lo retorna
+* .shift => Borra el primer elemetno de un array y lo retorna
+* .splice => permite borrar elementos a partir de un indice dado y una cantidad dada. Retorna los elementos juegosBorrados
+* .indexOf => retorna la posicion de un elemento dentro de un arreglo. Recibe el elemento a buscar y el index donde empezar a buscar. retorna la posicion o -1 si no lo encuentra
+* .toUpperCase() => metodo que permite transformar el contenido a uppercase
+* delete => borra una propiedad
+* Object.entries() => transforma el objeto en un arreglo multidimencional donde cada parametro se transforma en array tamano 2
+* Object.freeze() => bloquea al objeto impidiendo que se realicen cambios sobre el mismo. 
+* Object.getOwnPropertyNames() => obtener un arreglo con todas las propiedades de un objeto
+* Object.values() => obtener un arreglo con todos los valores de la propiedades de un objeto
+* ...=> si esta dentro de los () de una funcion se le conoce como 'rest' y lo que hace es tomar todos los argumentos de una funcion y delvoverlos como un arreglo en una variable
+* ...=> si se usa en cualquier otro lado se llama el indicador 'spread' y lo que hace es separar los elementos y romper la referencia en JS al momento de la asignacion, es decir que pasa como valor al igual que los primitivos 
+* const {param1, param2,...} = object{} => nos permite destructurar un objeto, es decir, tomar los valores seleccionados de un objeto e inicianizarlos en otras constantes.
+* const {param1: newParam} = object{} => nos permite renombrar las nuevas variables donde se alojan las propiedades destruccturadas.
+* const { param: {nestedParam1, nestedParam2}} = object{} => nos permite destructurar los objetos descendientes.
+* const [ param1, param2] = [0,1,2,3,4,...]; => nos permite destructurar un arreglo y asignar su contenido individual a otras variables.
+* const [ param1,,,, param5] = [0,1,2,3,4,...]; => nos permite tomar cualquier posicion en el arreglo mediante la implementacion de comas
+* const constante = ({ param1, param2, param3, param4 }) => {body function} => nos permite destruccturar un objeto para usar los parametros requeridos de dicho objeto dentro de la funcion.
+* const objectCreator = (arg1, arg2) => ({ prop1, prop2 }); => shorthand de objetos literales. nos permite crear obetos literales mas facil y rapido evitando redundancia 
+
+**por referencia hace referencia a que apuntan al mismo lugar en memoria, a diferencia de valor que lo que hace es guardar otro espacio en memoria con el valor asignado.
+* Math.random() => generates random number 1 > number >=0 
+* Math.floor()=> rounds a decimal to its nearest whole number
+* Math.floor(Math.random() * (max - min + 1)) + min => function to get a random betwen 2 limiters
+* parseInt() => recibe un string y devuelve un entero
+* parseInt(string, radix) => specifies the base of the number in the string
+
+
+
+//-------------DOM------------------
+* document => hace referencia a todo el documento HTML
+* document.queryselector('elemento') => me permite recuperar el primer elemento que cumpla con la condicion especificada
+* document.queryselectorAll('elemento') => me permite recuperar todos los elementos que cumplan con la condicion especificada
+* document.queryselector('elemento').innerText = texto => me permite cambiar el texto del elemento seleccionado.
+* document.queryselector('elemento').innerHTML = texto => me permite cambiar el contenido HTML del elemento seleccionado
+* document.getElementById('id del elemento) => me permite manipular el elemtno por el id seleccionado
+* document.createElement('elemento HTML'); => me permite crear un elemento html
+* document.append (elemento); => me permite anadir un elemento en el html
+* elemento.classList.add('clase') => me permite anadir una clase a un elemento html
+* elemento.addEventListener('Evento que queremos escuchar', callback o accion a ejecutar) => me permite escuchar eventos
+* document.createElement('div').firstElementChild => se usa para crear listas en un html, de esta manera se omite el div y solo entra el contenido
+* addEventListener('keyup', (event)=>{if (event.key === 'tecla')}) => se usa para crear un event listener de una tecla
+* event.target => permite ver el target del click
+* event.target.localname => permite ver mas especificamente el nombre del target
+* event.target.localname.includes('busqueda') => permite verificar si la palabra en busqueda se encuentra en el target
+* event.target.parentElement => permite ver el elemento padre del target
+* event.target.parentElement.getAttribute('attribute) => permite obtner el atributo seleccionado
+* elemento.classList.toggle('clase') => se encarga de cambiar el estado de una clase, la pone o la quita
+
+
+//------------NPM------------------
+* mkdir webpack-demo => toca crear un directorio para el proyecto
+* cd webpack-demo => toca estar ubicados sobre el proyecto
+* npm init -y => nos permite crear un packaje.json para poder usar webpack y npm en nuestro proyecto
+* npm install webpack webpack-cli --save-dev => instala webpack y el console log implementation en el proyecto
+* usar documentacion o revisar los videos para ver la creacion del webpack.config.js
+//crear reglas en el webpack.config.js
+* npm install --save-dev html-loader html-webpack-plugin => instalacion de paquetes que permite mover index.html a la carpeta de dist y decirle al webpack que incruste el bundle (main.js) en el index.html
+// revisar la documentacion de html-webpack-plugin y html-loader para ver los detalles de la configuracion mas actualizada
+* npm install -D webpack-dev-server => instala un paquete que permite tener un servidor de desarrollo
+* npm install -D css-loader style-loader => css-loader nos permite leer el archivo, injectarlo y minimizarlo para usar en el bundle, style-loader se instala conjuntamente.
+* npm run build => crea los archivos bundle en .dist, basicamente compila el codigo
+* npm start => se usa luego de run build y es para el dev server.
+* webpack => comando que ejecuta el empaquetamiento
+* npm install -D mini-css-extract-plugin => plugin nos permite extraer css entre multiples archivos de css, crea un css por cada js que use css
+* npm install -D css-minimizer-webpack-plugin => nos permite minimizar el codigo de css para produccion
+* npm install -D file-loader => ya no se recomienda usar. permite la carga de archivos como los png, jpg para que se puedan usar en el bundle
+* npm install -D copy-webpack-plugin => se encarga de copiar archivos o directorios completos al bundle de distribucion
+* "build": "webpack --config webpack.prod.js" => nos permite crear un script para la build de produccion.
+* main.[contentHash].js => genera un hash aleatorio lo cual hace que el navegador del cliente no almacene en cache la pagina
+* npm install --save-dev babel-loader @babel/core => instala Babel en el proyecto, el cual nos permite compilar js moderno a versiones legacy

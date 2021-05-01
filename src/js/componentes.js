@@ -1,7 +1,9 @@
-
+import {Todo} from '../classes';
+import {todoList} from '../index';
 
 //Referencias HTML
 const divTodoList = document.querySelector('.todo-list');
+const txtInput = document.querySelector('.new-todo');
 
 
 export const crearTodoHtml = ( todo ) => {
@@ -27,4 +29,33 @@ export const crearTodoHtml = ( todo ) => {
 
 }
 
+// Eventos
 
+txtInput.addEventListener('keyup', (event) => {
+
+    if (event.key === 'Enter' && txtInput.value != '') {
+        // code for enter
+        const newTodo = new Todo(txtInput.value); // creates a new ToDo instance
+        crearTodoHtml(newTodo); // triggers the html li for the new ToDo
+        todoList.nuevoTodo(newTodo); //sends the new todo to the todo list
+        txtInput.value = ''; //resets the input
+    }
+
+});
+
+divTodoList.addEventListener('click', (event)=> {
+
+    const nombreElemento = event.target.localName; //input, label y button
+    const todoElemento   = event.target.parentElement.parentElement; //obtains li element
+    const todoId         = todoElemento.getAttribute('data-id') ;// gets the daata-id info
+
+    if (nombreElemento.includes('input')) {
+        todoList.marcarCompletado(todoId);
+        todoElemento.classList.toggle('completed'); //toggles the class. adding it and removing
+    }
+    
+    // console.log(event.target.localName);
+    // console.log(event.target.parentElement.parentElement);
+    // console.log(todoId);
+
+})

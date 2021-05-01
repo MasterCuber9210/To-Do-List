@@ -20,8 +20,17 @@ export class TodoList {
 
     }
 
-    marcarCompleatdo ( id ) {
+    marcarCompletado ( id ) {
+        
+        for (let i = 0; i < this.todos.length; i++) {
+            const todo = this.todos[i];
 
+            if (todo.id == id) {
+                todo.completado = !todo.completado; 
+            }
+            
+        }
+        
     }
 
     eliminarCompletados () {
