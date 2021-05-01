@@ -57,6 +57,11 @@
 * elemento.classList.toggle('clase') => se encarga de cambiar el estado de una clase, la pone o la quita
 * elemento.removeChild('child element') => nos permite eliminar un elemento hijo del html
 
+//---------Local & session storage----------
+* localStorage.setItem('key','value') => nos permite almacenar valores en el local storage
+* localStorage.removeItem('key') => nos permite eliminar un valor del storage
+
+
 
 //------------NPM------------------
 * mkdir webpack-demo => toca crear un directorio para el proyecto

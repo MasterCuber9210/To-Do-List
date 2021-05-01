@@ -4,6 +4,7 @@ import {todoList} from '../index';
 //Referencias HTML
 const divTodoList = document.querySelector('.todo-list');
 const txtInput = document.querySelector('.new-todo');
+const btnRmCompletados = document.querySelector('.clear-completed');
 
 
 export const crearTodoHtml = ( todo ) => {
@@ -65,4 +66,19 @@ divTodoList.addEventListener('click', (event)=> {
     // console.log(event.target.parentElement.parentElement);
     // console.log(todoId);
 
+})
+
+btnRmCompletados.addEventListener('click', () => {
+
+    todoList.eliminarCompletados();
+
+    for (let i = divTodoList.children.length-1; i >= 0; i--) {
+        const todo = divTodoList.children[i];
+
+        if (todo.classList.contains('completed')) {
+            divTodoList.removeChild(todo);
+        }
+        
+    }
+    
 })
