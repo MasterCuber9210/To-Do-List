@@ -59,6 +59,9 @@
 
 //---------Local & session storage----------
 * localStorage.setItem('key','value') => nos permite almacenar valores en el local storage
+* localStorage.setItem('ToDo//elemento i', JSON.stringify(this.todos)//elemento array que contiene a i se debe transformar a un JSON) // nos permite guardar la informacion requerida en el local storage
+* localStorage.getItem('ToDo') => recupera el key de ToDo en forma de archivo JSON
+* JSON.parse(localStorage.getItem('ToDo)) => recupera el key de ToDo pero esta vez lo transforma de JSON a un array
 * localStorage.removeItem('key') => nos permite eliminar un valor del storage
 
 

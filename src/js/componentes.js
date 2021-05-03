@@ -2,9 +2,11 @@ import {Todo} from '../classes';
 import {todoList} from '../index';
 
 //Referencias HTML
-const divTodoList = document.querySelector('.todo-list');
-const txtInput = document.querySelector('.new-todo');
+const divTodoList      = document.querySelector('.todo-list');
+const txtInput         = document.querySelector('.new-todo');
 const btnRmCompletados = document.querySelector('.clear-completed');
+const ulFiltros        = document.querySelector('.filters');
+const anchorFiltros    = document.querySelectorAll('.filtro');
 
 
 export const crearTodoHtml = ( todo ) => {
@@ -80,5 +82,45 @@ btnRmCompletados.addEventListener('click', () => {
         }
         
     }
+    
+})
+
+ulFiltros.addEventListener('click', (event) => {
+
+    const filtro = event.target.text;
+
+    if (!filtro) { return;}
+
+    anchorFiltros.forEach(element => {
+        element.classList.remove('selected');
+    });
+
+    for (const elemento of divTodoList.children) {
+        
+        elemento.classList.remove('hidden');
+        const completado = elemento.classList.contains('completed');
+
+        switch (filtro) {
+            case 'Completados':
+
+                event.target.classList.add('selected');
+                
+                if (!completado) {
+                    elemento.classList.add('hidden');
+                }
+                break;
+            
+            case 'Pendientes':
+
+                event.target.classList.add('selected');
+                
+                if (completado) {
+                    elemento.classList.add('hidden');
+                }
+                break;
+        }
+        
+    }
+
     
 })
