@@ -87,3 +87,7 @@
 * "build": "webpack --config webpack.prod.js" => nos permite crear un script para la build de produccion.
 * main.[contentHash].js => genera un hash aleatorio lo cual hace que el navegador del cliente no almacene en cache la pagina
 * npm install --save-dev babel-loader @babel/core => instala Babel en el proyecto, el cual nos permite compilar js moderno a versiones legacy
+
+* ERROR index.js loader* 
+npm install -D babel-loader @babel/core @babel/preset-env webpack
+* ERROR *
